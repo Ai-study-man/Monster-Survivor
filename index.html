@@ -14,8 +14,6 @@
     <link rel="canonical" href="https://monstersurvivors.com/" />
     <title>Monster Survivors | Online Survival Game | Monstersurvivors.com</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4372695356377122"
-     crossorigin="anonymous"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -76,6 +74,12 @@
             .feature-card {
                 margin-bottom: 2rem;
             }
+        }
+
+        /* 全屏时让 iframe 占满屏幕 */
+        .is-fullscreen .game-iframe {
+            width: 100vw !important;
+            height: 100vh !important;
         }
     </style>
     <!-- Google Analytics 代码 -->
@@ -164,12 +168,17 @@
                         class="game-iframe" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="mt-8 text-center">
+            <div class="mt-8 text-center space-x-4">
                 <p class="text-gray-600 mb-4">Game may take a few moments to load. Ensure you have a stable internet
                     connection.</p>
                 <button onclick="location.reload()"
                     class="bg-apple-blue text-white py-2 px-6 rounded hover:bg-blue-700 transition duration-300">
                     Reload Game
+                </button>
+                <!-- Fullscreen Button -->
+                <button id="fullscreen-btn"
+                    class="bg-apple-blue text-white py-2 px-6 rounded hover:bg-blue-700 transition duration-300">
+                    Fullscreen
                 </button>
             </div>
         </div>
@@ -202,7 +211,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="feature-card bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        <svg xmlns="https://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -214,7 +223,7 @@
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        <svg xmlns="https://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -223,10 +232,10 @@
                     <h3 class="text-xl font-bold mb-4">Diverse Enemies</h3>
                     <p class="text-gray-600">Face over 20 unique monster types, each with special abilities and attack
                         patterns to challenge your skills.</p>
-                </div>
+                ></div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        <svg xmlns="https://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -235,7 +244,7 @@
                     <h3 class="text-xl font-bold mb-4">Upgrade System</h3>
                     <p class="text-gray-600">Collect resources to upgrade your weapons, armor, and abilities to become
                         stronger with each playthrough.</p>
-                </div>
+                ></div>
             </div>
         </div>
     </section>
@@ -248,35 +257,27 @@
                 <div class="mb-8">
                     <h3 class="text-2xl font-bold mb-4 text-apple-blue">The Ultimate Survival Challenge</h3>
                     <p class="text-gray-700 mb-4">
-                        Monster Survivors is an intense online survival game set in a post-apocalyptic world overrun by
-                        terrifying creatures.
-                        Players must navigate dangerous environments, scavenge for resources, and battle increasingly
-                        difficult waves of monsters to survive as long as possible.
+                        Monster Survivors is an intense online survival game set in a post-apocalyptic world overrun by terrifying creatures.
+                        Players must navigate dangerous environments, scavenge for resources, and battle increasingly difficult waves of monsters to survive as long as possible.
                     </p>
                     <p class="text-gray-700">
-                        With its easy-to-learn but hard-to-master gameplay, Monster Survivors offers endless
-                        replayability as you experiment with different strategies and upgrades to improve your high
-                        score.
+                        With its easy-to-learn but hard-to-master gameplay, Monster Survivors offers endless replayability as you experiment with different strategies and upgrades to improve your high score.
                     </p>
                 </div>
                 <div class="mb-8">
                     <h3 class="text-2xl font-bold mb-4 text-apple-blue">Gameplay Mechanics</h3>
                     <p class="text-gray-700 mb-4">
-                        The game combines elements of survival horror, tower defense, and action RPGs to create a unique
-                        gaming experience.
-                        Players start with basic weapons and must carefully manage their limited resources while fending
-                        off monster attacks.
+                        The game combines elements of survival horror, tower defense, and action RPGs to create a unique gaming experience.
+                        Players start with basic weapons and must carefully manage their limited resources while fending off monster attacks.
                     </p>
                     <p class="text-gray-700">
-                        As you progress, you'll unlock powerful abilities, discover rare weapons, and encounter special
-                        boss monsters that will test your skills to the limit.
+                        As you progress, you'll unlock powerful abilities, discover rare weapons, and encounter special boss monsters that will test your skills to the limit.
                     </p>
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold mb-4 text-apple-blue">System Requirements</h3>
                     <p class="text-gray-700">
-                        Monster Survivors runs directly in your browser with no downloads required. The game is
-                        optimized to work on both desktop and mobile devices with:
+                        Monster Survivors runs directly in your browser with no downloads required. The game is optimized to work on both desktop and mobile devices with:
                     </p>
                     <ul class="list-disc pl-6 mt-4 text-gray-700 space-y-2">
                         <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
@@ -297,29 +298,25 @@
                 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
                     <h3 class="text-xl font-bold mb-3 text-apple-red">1. Prioritize Your Upgrades</h3>
                     <p class="text-gray-700">
-                        Focus on upgrading your movement speed first - being able to dodge attacks is more valuable than
-                        dealing slightly more damage early on.
+                        Focus on upgrading your movement speed first - being able to dodge attacks is more valuable than dealing slightly more damage early on.
                     </p>
                 </div>
                 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
                     <h3 class="text-xl font-bold mb-3 text-apple-red">2. Learn Monster Patterns</h3>
                     <p class="text-gray-700">
-                        Each monster type has distinct attack patterns. Study them to anticipate attacks and position
-                        yourself advantageously.
+                        Each monster type has distinct attack patterns. Study them to anticipate attacks and position yourself advantageously.
                     </p>
                 </div>
                 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
                     <h3 class="text-xl font-bold mb-3 text-apple-red">3. Manage Your Resources</h3>
                     <p class="text-gray-700">
-                        Don't waste ammunition on weak monsters when melee attacks would suffice. Save powerful weapons
-                        for boss encounters.
+                        Don't waste ammunition on weak monsters when melee attacks would suffice. Save powerful weapons for boss encounters.
                     </p>
                 </div>
                 <div class="bg-white rounded-xl shadow-sm p-6">
                     <h3 class="text-xl font-bold mb-3 text-apple-red">4. Use the Environment</h3>
                     <p class="text-gray-700">
-                        Some areas provide natural choke points or obstacles that can help you control monster movement
-                        and funnel enemies.
+                        Some areas provide natural choke points or obstacles that can help you control monster movement and funnel enemies.
                     </p>
                 </div>
             </div>
@@ -333,8 +330,7 @@
                 <div class="mb-8 md:mb-0">
                     <h3 class="text-2xl font-bold mb-4">Monster Survivors</h3>
                     <p class="text-gray-400 max-w-xs">
-                        The ultimate online survival experience. Battle monsters, upgrade your gear, and survive as long
-                        as you can.
+                        The ultimate online survival experience. Battle monsters, upgrade your gear, and survive as long as you can.
                     </p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -344,61 +340,84 @@
                             <li><a href="#game" class="text-gray-400 hover:text-white transition">Play Now</a></li>
                             <li><a href="#features" class="text-gray-400 hover:text-white transition">Features</a></li>
                             <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Help</h4>
-                        <ul class="space-y-2">
                             <li><a href="#tips" class="text-gray-400 hover:text-white transition">Tips</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <h4 class="text-lg font-semibold mb-4">Community</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Forum</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Discord</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2023 MonsterSurvivors.com. All rights reserved.</p>
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 Monster Survivors. All rights reserved.
             </div>
         </div>
     </footer>
-
+    <!-- 放在页面底部，紧跟现有的 <script> 标签之后 -->
     <script>
-        // Mobile menu toggle functionality
-        document.querySelector('button').addEventListener('click', function () {
-            const navLinks = document.querySelector('.hidden.md\\:flex');
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-            navLinks.classList.toggle('flex-col');
-            navLinks.classList.toggle('absolute');
-            navLinks.classList.toggle('top-16');
-            navLinks.classList.toggle('left-0');
-            navLinks.classList.toggle('right-0');
-            navLinks.classList.toggle('bg-white');
-            navLinks.classList.toggle('py-4');
-            navLinks.classList.toggle('px-8');
-            navLinks.classList.toggle('space-y-4');
-            navLinks.classList.toggle('space-x-8');
-            navLinks.classList.toggle('shadow-md');
-        });
+      const btn = document.getElementById('fullscreen-btn');
+      const iframe = document.querySelector('.game-iframe');
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+      btn.addEventListener('click', () => {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        } else {
+          alert('浏览器不支持全屏 API');
+        }
+      });
+
+      // 监听全屏状态变化，给 body 添加/移除 class
+      function onFullscreenChange() {
+        if (
+          document.fullscreenElement === iframe ||
+          document.webkitFullscreenElement === iframe ||
+          document.msFullscreenElement === iframe
+        ) {
+          document.body.classList.add('is-fullscreen');
+        } else {
+          document.body.classList.remove('is-fullscreen');
+        }
+      }
+
+      document.addEventListener('fullscreenchange', onFullscreenChange);
+      document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+      document.addEventListener('msfullscreenchange', onFullscreenChange);
+
+      // 添加退出全屏的快捷键（Esc 或 F11）
+      document.addEventListener('keydown', function (e) {
+        if (
+          (e.key === 'Escape' && (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement)) ||
+          (e.key === 'F11' && (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement))
+        ) {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+          if (e.key === 'F11') {
+            e.preventDefault();
+          }
+        }
+      });
     </script>
 </body>
-
 </html>
