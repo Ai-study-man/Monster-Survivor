@@ -9,11 +9,49 @@
 <body class="bg-gray-50">
     <div class="container mx-auto px-4 py-12 max-w-4xl">
         <h1 class="text-4xl font-bold mb-8">Contact Us</h1>
-        
+
+        <!-- 联系方式说明部分 -->
+        <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">Contact Information</h2>
+            <div class="space-y-6 text-gray-600">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Direct Email Support</h3>
+                    <p>For urgent inquiries: <a href="mailto:2177307948@qq.com" class="text-blue-600 hover:underline">2177307948@qq.com</a></p>
+                    <p class="mt-2">Response time: Within 24 hours on business days</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Social Media</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.douyin.com/user/源启AI" class="text-gray-600 hover:text-blue-600">
+                            <span>抖音号: 源启AI</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Common Inquiries</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Technical issues or game crashes</li>
+                        <li>Account-related questions</li>
+                        <li>Bug reports and gameplay feedback</li>
+                        <li>Business cooperation opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系表单部分 -->
         <div class="bg-white rounded-lg shadow-sm p-8">
             <div class="mb-8">
                 <h2 class="text-2xl font-semibold mb-4 text-blue-600">Get in Touch</h2>
-                <p class="text-gray-600">Have questions or feedback? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+                <p class="text-gray-600">Have questions or feedback? We'd love to hear from you. Please provide as much detail as possible to help us better assist you.</p>
+                <p class="text-gray-600 mt-2">For bug reports, please include:</p>
+                <ul class="list-disc pl-5 mt-2 text-gray-600">
+                    <li>Your browser and operating system</li>
+                    <li>Steps to reproduce the issue</li>
+                    <li>Screenshots if applicable</li>
+                </ul>
             </div>
 
             <form action="https://formspree.io/f/xqabawln" method="POST" class="space-y-6">
@@ -49,6 +87,22 @@
                     <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">Send Message</button>
                 </div>
             </form>
+
+            <!-- 添加提交说明 -->
+            <p class="text-sm text-gray-500 mt-4">
+                By submitting this form, you agree to our <a href="./privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a>. We'll only use your information to respond to your inquiry.
+            </p>
+        </div>
+        
+        <!-- 常见问题快速链接 -->
+        <div class="mt-8 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="./faq.html#technical" class="text-blue-600 hover:underline">Technical Support FAQ</a>
+                <a href="./faq.html#account" class="text-blue-600 hover:underline">Account Management</a>
+                <a href="./faq.html#gameplay" class="text-blue-600 hover:underline">Gameplay Guide</a>
+                <a href="./terms.html" class="text-blue-600 hover:underline">Terms of Service</a>
+            </div>
         </div>
 
         <div class="mt-8">
