@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Allow access to all content for search engines
+Allow: /index.html
+Allow: /guide/
+Allow: /blog.html
+Allow: /faq.html
+Allow: /contact.html
+Allow: /team.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# Sitemap location
+Sitemap: https://monstersurvivors.com/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1
